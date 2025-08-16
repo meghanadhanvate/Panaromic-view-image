@@ -441,9 +441,7 @@ const Chatbot = () => {
 
   return (
     <div style={{ 
-    
-      width: "900px",   // ⬅ wider
-    maxWidth: "100%", 
+      width: '100%', 
       height: '500px', 
       display: 'flex', 
       flexDirection: 'column',
@@ -484,7 +482,7 @@ const Chatbot = () => {
 
       <ScrollPanel
         style={{
-
+            
           width: '100%',
           flex: 1,
           overflowX: 'hidden',

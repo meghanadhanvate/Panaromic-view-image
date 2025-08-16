@@ -89,7 +89,7 @@ const MainSection = ({ isMobile = false, stringClass = "" }) => {
             position: "fixed",
             bottom: "20px",
             right: "20px",
-            width: "400px",
+            width: "600px",
             backgroundColor: stringClass.includes("darkContrast")
               ? "#23232a"
               : "white",
@@ -129,7 +129,7 @@ const MainSection = ({ isMobile = false, stringClass = "" }) => {
                   : "#111827",
               }}
             >
-              MOSPI AI Assistant
+               AI Instructor
             </h3>
             <button
               onClick={() => setShowChatbot(false)}
