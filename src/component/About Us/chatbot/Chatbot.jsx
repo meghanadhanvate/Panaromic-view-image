@@ -1,9 +1,11 @@
 import React, { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import Embedhtml from './Embedhtml';
-import { FiSend, FiMic, FiMicOff, FiVolume2, FiUser, FiCpu } from 'react-icons/fi';
+import { FiSend, FiMic, FiMicOff, FiVolume2, FiUser} from 'react-icons/fi';
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 import { ScrollPanel } from 'primereact/scrollpanel';
+import chatboticon from '../../../img/roundel.jpg'
+
 
 // Memoized Message Component to prevent unnecessary re-renders
 const MessageComponent = React.memo(({ message, isDarkContrast, extractSourceNames, speakText }) => {
@@ -22,14 +24,14 @@ const MessageComponent = React.memo(({ message, isDarkContrast, extractSourceNam
           width: '36px',
           height: '36px',
           borderRadius: '50%',
-          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          background: 'linear-gradient(135deg, #005de8ff 0%, #0087e8ff 100%)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           marginRight: '12px',
           boxShadow: '0 4px 12px rgba(102, 126, 234, 0.3)',
         }}>
-          <FiCpu size={18} color="white" />
+          <img src={chatboticon} alt="" />
         </div>
       )}
       
@@ -38,7 +40,7 @@ const MessageComponent = React.memo(({ message, isDarkContrast, extractSourceNam
           maxWidth: message.sender === 'user' ? '75%' : '85%',
           padding: '16px 20px',
           background: message.sender === 'user' 
-            ? 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+            ? 'linear-gradient(135deg, #002cf1ff 0%, #0089d9ff 100%)'
             : isDarkContrast 
               ? 'linear-gradient(135deg, #2d3748 0%, #4a5568 100%)'
               : 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
@@ -153,7 +155,7 @@ const MessageComponent = React.memo(({ message, isDarkContrast, extractSourceNam
             style={{
               marginTop: '12px',
               fontSize: '13px',
-              background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+              background: 'linear-gradient(135deg, #006beeff 0%, #006ad4ff 100%)',
               border: 'none',
               color: 'white',
               cursor: 'pointer',
@@ -186,7 +188,7 @@ const MessageComponent = React.memo(({ message, isDarkContrast, extractSourceNam
           width: '36px',
           height: '36px',
           borderRadius: '50%',
-          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          background: 'linear-gradient(135deg, #002efdff 0%, #0080ffff 100%)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -207,7 +209,7 @@ const Chatbot = () => {
   const [messages, setMessages] = useState([
     {
       id: 1,
-      text: "🎓 Hello there! I'm your **AI Instructor**, ready to guide you through your learning journey! Whether you need help with complex concepts, data analysis, problem-solving, or want to explore new topics, I'm here to provide personalized instruction and support.",
+      text: "Jai Hind ! welcome to **IAF AI Flight Instructor**, ready to guide you through your cockpit journey! I am here to train you on Pilatus PC 7 , feel free to ask any Queries, Checks & be the best of Indian Air Force.",
       sender: 'bot',
     },
   ]);
@@ -379,7 +381,7 @@ const Chatbot = () => {
         ...prev,
         {
           id: Date.now() + 1,
-          text: "I'm sorry, something unexpected happened. Let me try to help you again - please resend your message.",
+          text: "Something unexpected happened. Let me try to help you again - please resend your message.",
           sender: 'bot',
         },
       ]);
@@ -456,7 +458,7 @@ const Chatbot = () => {
       {/* Header */}
       <div style={{
         padding: '16px 24px',
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        background: 'linear-gradient(135deg, #042ff0ff 0%, #009dffff 100%)',
         color: 'white',
         display: 'flex',
         alignItems: 'center',
@@ -472,11 +474,11 @@ const Chatbot = () => {
           alignItems: 'center',
           justifyContent: 'center',
         }}>
-          <FiCpu size={20} />
+          <img src={chatboticon} alt="" />
         </div>
         <div>
-          <h3 style={{ margin: 0, fontSize: '18px', fontWeight: '700' }}>AI Instructor</h3>
-          <p style={{ margin: 0, fontSize: '13px', opacity: 0.9 }}>Your Personal Learning Assistant</p>
+          <h3 style={{ margin: 0, fontSize: '18px', fontWeight: '700' }}>IAF AI flight Instructor</h3>
+          <p style={{ margin: 0, fontSize: '13px', opacity: 0.9 }}>AI enabled training for future IAF pilots</p>
         </div>
       </div>
 
@@ -499,14 +501,14 @@ const Chatbot = () => {
               width: '36px',
               height: '36px',
               borderRadius: '50%',
-              background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+              background: 'linear-gradient(135deg, #103af8ff 0%, #166cffff 100%)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               marginRight: '12px',
               boxShadow: '0 4px 12px rgba(102, 126, 234, 0.3)',
             }}>
-              <FiCpu size={18} color="white" />
+             <img src={chatboticon} alt="" />
             </div>
             <div style={{ 
               background: isDarkContrast 
@@ -523,7 +525,7 @@ const Chatbot = () => {
                   fontSize: '14px',
                   marginRight: '8px'
                 }}>
-                  Thinking...
+                  Validating the Checks ...
                 </span>
                 {[0, 0.2, 0.4].map((delay, index) => (
                   <div
@@ -531,7 +533,7 @@ const Chatbot = () => {
                     style={{
                       width: '8px',
                       height: '8px',
-                      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                      background: 'linear-gradient(135deg, #002fffff 0%, #0182dfff 100%)',
                       borderRadius: '50%',
                       animation: 'bounce 1.4s infinite ease-in-out',
                       animationDelay: `${delay}s`,
@@ -561,7 +563,7 @@ const Chatbot = () => {
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
               onKeyPress={handleKeyPress}
-              placeholder="Ask me anything... I'm here to help you learn! 🎓"
+              placeholder="Run your Flight Checklist"
               style={{
                 width: '100%',
                 padding: '14px 16px',
@@ -677,7 +679,7 @@ const Chatbot = () => {
               borderRadius: '50%',
               animation: 'pulse 1s infinite',
             }} />
-            🎤 I'm listening... speak your question now!
+            🎤 Run your Checklists
           </p>
         )}
 
